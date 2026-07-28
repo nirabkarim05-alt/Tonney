@@ -241,8 +241,6 @@ const observer = new IntersectionObserver(entries => {
 
 sections.forEach(section => {
 
-    section.style.opacity = 0;
-
     observer.observe(section);
 
 });
