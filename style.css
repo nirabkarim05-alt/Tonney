@@ -1,0 +1,625 @@
+/* =========================
+   GLOBAL
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    overflow-x:hidden;
+
+    background:#07091f;
+
+    color:white;
+
+}
+
+/* =========================
+   STAR BACKGROUND
+========================= */
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+background:
+
+radial-gradient(circle,#ffffff 1px,transparent 1px),
+radial-gradient(circle,#ffffff 1px,transparent 1px),
+radial-gradient(circle,#ffffff 2px,transparent 2px);
+
+background-size:
+120px 120px,
+180px 180px,
+250px 250px;
+
+opacity:.25;
+
+animation:starsMove 150s linear infinite;
+
+z-index:-3;
+
+}
+
+@keyframes starsMove{
+
+from{
+transform:translateY(0);
+}
+
+to{
+transform:translateY(-800px);
+}
+
+}
+
+/* =========================
+   MOON
+========================= */
+
+.moon{
+
+position:fixed;
+
+right:80px;
+top:60px;
+
+width:130px;
+height:130px;
+
+border-radius:50%;
+
+background:#fff;
+
+box-shadow:
+
+0 0 40px white,
+
+0 0 90px white,
+
+0 0 150px rgba(255,255,255,.5);
+
+z-index:-2;
+
+}
+
+/* =========================
+   INTRO
+========================= */
+
+#intro{
+
+position:fixed;
+
+inset:0;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+flex-direction:column;
+
+background:#000;
+
+z-index:999;
+
+animation:introHide 6s forwards;
+
+}
+
+@keyframes introHide{
+
+0%{
+
+opacity:1;
+
+}
+
+85%{
+
+opacity:1;
+
+}
+
+100%{
+
+opacity:0;
+visibility:hidden;
+
+}
+
+}
+
+.heart{
+
+font-size:90px;
+
+animation:pulse 1.5s infinite;
+
+}
+
+@keyframes pulse{
+
+0%{
+
+transform:scale(1);
+
+}
+
+50%{
+
+transform:scale(1.25);
+
+}
+
+100%{
+
+transform:scale(1);
+
+}
+
+}
+
+#intro h1{
+
+font-family:'Dancing Script',cursive;
+
+font-size:60px;
+
+margin-top:20px;
+
+}
+
+#intro p{
+
+margin-top:20px;
+
+font-size:22px;
+
+opacity:.9;
+
+}
+
+/* =========================
+   MAIN
+========================= */
+
+section{
+
+min-height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+flex-direction:column;
+
+padding:50px 20px;
+
+}
+
+.glass{
+
+width:90%;
+max-width:850px;
+
+padding:45px;
+
+text-align:center;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(15px);
+
+border-radius:30px;
+
+border:1px solid rgba(255,255,255,.2);
+
+box-shadow:
+
+0 0 25px rgba(255,105,180,.25);
+
+}
+
+.glass h1{
+
+font-family:'Dancing Script',cursive;
+
+font-size:70px;
+
+margin-bottom:10px;
+
+}
+
+.glass h2{
+
+font-weight:300;
+
+margin-bottom:20px;
+
+}
+
+#typing{
+
+font-size:24px;
+
+min-height:70px;
+
+line-height:1.6;
+
+margin-bottom:35px;
+
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+button{
+
+padding:18px 42px;
+
+font-size:18px;
+
+background:#ff4d88;
+
+color:white;
+
+border:none;
+
+border-radius:50px;
+
+cursor:pointer;
+
+transition:.35s;
+
+box-shadow:0 0 20px rgba(255,77,136,.5);
+
+}
+
+button:hover{
+
+transform:translateY(-3px) scale(1.05);
+
+box-shadow:0 0 35px rgba(255,77,136,.8);
+
+}
+
+/* =========================
+   LETTER
+========================= */
+
+.letter{
+
+width:90%;
+max-width:850px;
+
+padding:45px;
+
+background:#fffaf5;
+
+color:#333;
+
+border-radius:25px;
+
+box-shadow:0 20px 60px rgba(0,0,0,.35);
+
+line-height:2;
+
+font-size:20px;
+
+}
+
+.letter h1{
+
+font-family:'Dancing Script',cursive;
+
+font-size:55px;
+
+color:#b22222;
+
+margin-bottom:25px;
+
+}
+
+.letter h2{
+
+margin-top:30px;
+
+font-family:'Dancing Script',cursive;
+
+font-size:42px;
+
+color:#d6336c;
+
+}
+
+/* =========================
+   COUNTER
+========================= */
+
+#counter{
+
+font-size:42px;
+
+font-weight:bold;
+
+margin-top:25px;
+
+text-align:center;
+
+}
+
+/* =========================
+   GALLERY
+========================= */
+
+.photos{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+
+gap:25px;
+
+width:90%;
+
+max-width:1100px;
+
+margin-top:40px;
+
+}
+
+.photos img{
+
+width:100%;
+
+height:300px;
+
+object-fit:cover;
+
+border-radius:20px;
+
+transition:.4s;
+
+box-shadow:0 15px 30px rgba(0,0,0,.4);
+
+}
+
+.photos img:hover{
+
+transform:scale(1.06);
+
+}
+
+/* =========================
+   ENDING
+========================= */
+
+#ending h1{
+
+font-family:'Dancing Script',cursive;
+
+font-size:70px;
+
+margin-bottom:20px;
+
+text-align:center;
+
+}
+
+#ending h2{
+
+font-size:26px;
+
+font-weight:300;
+
+text-align:center;
+
+margin-bottom:30px;
+
+}
+
+#ending h3{
+
+font-size:52px;
+
+font-family:'Dancing Script',cursive;
+
+color:#ff6aa8;
+
+animation:glow 2s infinite;
+
+}
+
+@keyframes glow{
+
+0%{
+
+text-shadow:0 0 10px #ff6aa8;
+
+}
+
+50%{
+
+text-shadow:
+
+0 0 25px #ff6aa8,
+
+0 0 60px #ff6aa8;
+
+}
+
+100%{
+
+text-shadow:0 0 10px #ff6aa8;
+
+}
+
+}
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+.floatingHeart{
+
+position:fixed;
+
+bottom:-40px;
+
+font-size:24px;
+
+pointer-events:none;
+
+animation:heartFloat linear forwards;
+
+z-index:5;
+
+}
+
+@keyframes heartFloat{
+
+0%{
+
+transform:translateY(0) rotate(0deg);
+
+opacity:0;
+
+}
+
+20%{
+
+opacity:1;
+
+}
+
+100%{
+
+transform:translateY(-120vh) rotate(360deg);
+
+opacity:0;
+
+}
+
+}
+
+/* =========================
+   ROSE PETALS
+========================= */
+
+.petal{
+
+position:fixed;
+
+top:-50px;
+
+font-size:18px;
+
+pointer-events:none;
+
+animation:petalFall linear forwards;
+
+z-index:4;
+
+}
+
+@keyframes petalFall{
+
+0%{
+
+transform:translateY(0) rotate(0deg);
+
+opacity:0;
+
+}
+
+20%{
+
+opacity:1;
+
+}
+
+100%{
+
+transform:
+
+translateY(120vh)
+
+translateX(120px)
+
+rotate(720deg);
+
+opacity:0;
+
+}
+
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+
+.glass h1{
+
+font-size:50px;
+
+}
+
+#intro h1{
+
+font-size:45px;
+
+}
+
+.letter{
+
+padding:28px;
+
+font-size:18px;
+
+}
+
+#counter{
+
+font-size:30px;
+
+}
+
+#ending h1{
+
+font-size:50px;
+
+}
+
+#ending h3{
+
+font-size:40px;
+
+}
+
+}
